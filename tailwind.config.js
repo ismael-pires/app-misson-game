@@ -25,9 +25,14 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-3px)' },
         },
+        'rotate-device': {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '50%': { transform: 'rotate(-90deg)' },
+        },
       },
       animation: {
         'float-crown': 'float-crown 2.4s ease-in-out infinite',
+        'rotate-device': 'rotate-device 1.8s ease-in-out infinite',
       },
     },
   },

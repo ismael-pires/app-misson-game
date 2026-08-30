@@ -29,7 +29,7 @@ export function MenuButton({
       disabled={disabled}
       title={disabled ? badge : undefined}
       className={
-        'group relative flex h-14 w-64 shrink-0 items-center gap-3 whitespace-nowrap rounded-lg border px-5 font-body text-base tracking-wide transition-all duration-150 ' +
+        'group relative flex h-10 md:h-14 items-center gap-1.5 md:gap-3 overflow-hidden whitespace-nowrap rounded-lg border font-body text-base tracking-wide transition-all duration-150 ' +
         (disabled
           ? 'cursor-not-allowed border-apostole-cream/20 bg-apostole-navy/20 text-apostole-cream/40'
           : isPrimary
@@ -49,9 +49,9 @@ export function MenuButton({
       {label}
 
       {disabled && (
-        <span className="ml-auto flex w-[100px] shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-apostole-cream/15 bg-apostole-cream/10 px-2 text-[10px] uppercase tracking-wide text-apostole-cream/50">
+        <span className="ml-auto flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-apostole-cream/15 bg-apostole-cream/10 px-1.5 md:px-2 py-0.5 text-[9px] md:text-[10px] uppercase tracking-wide text-apostole-cream/50">
           <LockIcon />
-          {badge}
+          <span className="hidden md:inline">{badge}</span>
         </span>
       )}
     </button>
