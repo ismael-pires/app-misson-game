@@ -5,9 +5,10 @@ interface MenuButtonProps {
   label: string
   onClick: () => void
   variant?: 'primary' | 'secondary'
+  className?: string
 }
 
-export function MenuButton({ icon, label, onClick, variant = 'secondary' }: MenuButtonProps) {
+export function MenuButton({ icon, label, onClick, variant = 'secondary', className }: MenuButtonProps) {
   const isPrimary = variant === 'primary'
 
   return (
@@ -18,7 +19,8 @@ export function MenuButton({ icon, label, onClick, variant = 'secondary' }: Menu
         'group flex w-64 items-center gap-3 rounded-lg border px-5 py-3 font-body text-base tracking-wide transition-all duration-150 ' +
         (isPrimary
           ? 'border-apostole-gold bg-apostole-gold text-apostole-navydeep hover:bg-apostole-goldlight'
-          : 'border-apostole-cream/25 bg-apostole-navy/40 text-apostole-cream hover:border-apostole-gold hover:bg-apostole-navy/70')
+          : 'border-apostole-cream/25 bg-apostole-navy/40 text-apostole-cream hover:border-apostole-gold hover:bg-apostole-navy/70') +
+        (className ? ` ${className}` : '')
       }
     >
       <span

@@ -2,59 +2,67 @@ import { useNavigate } from 'react-router-dom'
 import { usePlayerStore } from '../../shared/store/usePlayerStore'
 import { BackgroundScene } from './components/BackgroundScene'
 import { GameLogo } from './components/GameLogo'
+import { HeroCharacter } from './components/HeroCharacter'
 import { MenuButton } from './components/MenuButton'
-import { PhaseProgressDots } from './components/PhaseProgressDots'
-import { ExitIcon, PlayIcon, ProfileIcon, ShopIcon, TrophyIcon } from './components/icons'
+import { PartnershipIcon, PlayIcon, ShopIcon, TrophyIcon } from './components/icons'
 
 export function MenuScreen() {
   const navigate = useNavigate()
-  const currency = usePlayerStore((state) => state.profile.currency)
-
-  const handleExit = () => {
-    if (window.confirm('Deseja sair do jogo?')) {
-      window.close()
-    }
-  }
+  const profile = usePlayerStore((state) => state.profile)
 
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen w-full flex-col justify-between overflow-hidden px-4 py-4 sm:px-8 lg:px-12 select-none">
       <BackgroundScene />
 
-      <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-apostole-cream/20 bg-apostole-navydeep/60 px-4 py-1.5 text-apostole-cream backdrop-blur-sm">
-        <span className="text-apostole-gold">
-          <img src={`/src/assets/dom.png`} alt="dons" className="h-6 w-6 rounded-full" />
-        </span>
-        <span className="font-body text-sm font-semibold">{currency}</span>
-      </div>
+      {/* Área Central: Personagem + (Logo/Slogan/Botões empilhados) */}
+      <div className="relative z-10 flex-1 flex w-full max-w-6xl items-center justify-center gap-6 lg:gap-12 py-2 -mt-6 sm:-mt-10 lg:-mt-16">
+        {/* Esquerda: Skin da Personagem (maior) */}
+        <div className="flex flex-1 items-center justify-center scale-110 lg:scale-125">
+          <HeroCharacter playerName={profile.name} />
+        </div>
 
-      <div className="relative z-10 flex flex-col items-center gap-8 px-6 py-12">
-        <GameLogo />
-        <PhaseProgressDots />
+        {/* Direita: Logo + Slogan + Botões */}
+        <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
+          <div className="scale-110 lg:scale-125 -translate-y-4">
+            <GameLogo showSlogan={true} />
+          </div>
 
-        <nav className="flex flex-col items-center gap-3 mt-2">
-          <MenuButton
-            icon={<PlayIcon />}
-            label="Jogar"
-            variant="primary"
-            onClick={() => navigate('/fases')}
-          />
-          <MenuButton
-            icon={<TrophyIcon />}
-            label="Ranking"
-            onClick={() => navigate('/ranking')}
-          />
-          <MenuButton
-            icon={<ShopIcon />}
-            label="Loja"
-            onClick={() => navigate('/loja')}
-          />
-          <MenuButton
-            icon={<ProfileIcon />}
-            label="Perfil"
-            onClick={() => navigate('/perfil')}
-          />
-          <MenuButton icon={<ExitIcon />} label="Sair" onClick={handleExit} />
-        </nav>
+          {/* Botões: Jogar -- Ranking -- Loja -- Parcerias */}
+          <nav className="flex items-center justify-center gap-2.5 sm:gap-4 max-w-md w-full">
+            {/* 1. Jogar (Maior e com mais destaque) */}
+            <MenuButton
+              icon={<PlayIcon />}
+              label="Jogar"
+              variant="primary"
+              className="flex-1 sm:flex-initial min-w-[150px] sm:min-w-[200px] py-3.5 px-6 text-base sm:text-lg font-bold tracking-wider shadow-lg shadow-apostole-gold/25 hover:scale-105"
+              onClick={() => navigate('/fases')}
+            />
+
+            {/* 2. Ranking */}
+            <MenuButton
+              icon={<TrophyIcon />}
+              label="Ranking"
+              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
+              onClick={() => navigate('/ranking')}
+            />
+
+            {/* 3. Loja */}
+            <MenuButton
+              icon={<ShopIcon />}
+              label="Loja"
+              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px] "
+              onClick={() => navigate('/loja')}
+            />
+
+            {/* 4. Parcerias */}
+            <MenuButton
+              icon={<PartnershipIcon />}
+              label="Parcerias"
+              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
+              onClick={() => navigate('/parcerias')}
+            />
+          </nav>
+        </div>
       </div>
     </div>
   )

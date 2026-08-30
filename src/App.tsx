@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import { MenuScreen } from './features/menu/MenuScreen'
+import { PartnershipsScreen } from './features/partnerships/PartnershipsScreen'
+import { PhasesScreen } from './features/phases/PhasesScreen'
+import { ProfileScreen } from './features/profile/ProfileScreen'
 import { RankingScreen } from './features/ranking/RankingScreen'
 import { ShopScreen } from './features/shop/ShopScreen'
-import { ProfileScreen } from './features/profile/ProfileScreen'
-import { PhasesScreen } from './features/phases/PhasesScreen'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/ranking" element={<RankingScreen />} />
       <Route path="/loja" element={<ShopScreen />} />
       <Route path="/perfil" element={<ProfileScreen />} />
+      <Route path="/parcerias" element={<PartnershipsScreen />} />
     </Routes>
   )
 }
