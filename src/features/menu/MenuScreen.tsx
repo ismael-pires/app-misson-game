@@ -28,7 +28,7 @@ export function MenuScreen() {
           </div>
 
           {/* Botões: Jogar -- Ranking -- Loja -- Parcerias */}
-          <nav className="flex items-center justify-center gap-2.5 sm:gap-4 max-w-md w-full">
+          <nav className="flex items-center justify-center gap-2.5 sm:gap-4 max-w-md w-full mt-10">
             {/* 1. Jogar (Maior e com mais destaque) */}
             <MenuButton
               icon={<PlayIcon />}
