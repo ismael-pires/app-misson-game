@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom'
 import { usePlayerStore } from '../../shared/store/usePlayerStore'
 import { BackgroundScene } from './components/BackgroundScene'
 import { GameLogo } from './components/GameLogo'
-import { PhaseProgressDots } from './components/PhaseProgressDots'
 import { MenuButton } from './components/MenuButton'
-import { CoinIcon, ExitIcon, PlayIcon, ProfileIcon, ShopIcon, TrophyIcon } from './components/icons'
+import { PhaseProgressDots } from './components/PhaseProgressDots'
+import { ExitIcon, PlayIcon, ProfileIcon, ShopIcon, TrophyIcon } from './components/icons'
 
 export function MenuScreen() {
   const navigate = useNavigate()
@@ -22,7 +22,7 @@ export function MenuScreen() {
 
       <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-apostole-cream/20 bg-apostole-navydeep/60 px-4 py-1.5 text-apostole-cream backdrop-blur-sm">
         <span className="text-apostole-gold">
-          <CoinIcon />
+          <img src={`/src/assets/dom.png`} alt="dons" className="h-6 w-6 rounded-full" />
         </span>
         <span className="font-body text-sm font-semibold">{currency}</span>
       </div>
