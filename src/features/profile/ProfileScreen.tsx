@@ -15,9 +15,9 @@ interface Skin {
 
 const skins: Skin[] = [
   { id: 'profile-skin', name: 'Padrão', image: profileSkin, locked: false },
-  { id: 'skin1', name: 'Skin 1', image: skin1, locked: true },
-  { id: 'skin2', name: 'Skin 2', image: skin2, locked: true },
-  { id: 'skin3', name: 'Skin 3', image: skin3, locked: true },
+  { id: 'skin1', name: 'R$ 5,00', image: skin1, locked: true },
+  { id: 'skin2', name: 'R$ 10,00', image: skin2, locked: true },
+  { id: 'skin3', name: 'R$ 20,00', image: skin3, locked: true },
 ]
 
 function LockIcon() {
