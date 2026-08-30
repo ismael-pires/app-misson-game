@@ -4,7 +4,7 @@ import { BackgroundScene } from './components/BackgroundScene'
 import { GameLogo } from './components/GameLogo'
 import { HeroCharacter } from './components/HeroCharacter'
 import { MenuButton } from './components/MenuButton'
-import { PartnershipIcon, PlayIcon, ShopIcon, TrophyIcon } from './components/icons'
+import { MultiplayerIcon, PartnershipIcon, PlayIcon, ShopIcon, TrophyIcon } from './components/icons'
 
 export function MenuScreen() {
   const navigate = useNavigate()
@@ -27,40 +27,53 @@ export function MenuScreen() {
             <GameLogo showSlogan={true} />
           </div>
 
-          {/* Botões: Jogar -- Ranking -- Loja -- Parcerias */}
-          <nav className="flex items-center justify-center gap-2.5 sm:gap-4 max-w-md w-full mt-10">
-            {/* 1. Jogar (Maior e com mais destaque) */}
-            <MenuButton
-              icon={<PlayIcon />}
-              label="Jogar"
-              variant="primary"
-              className="flex-1 sm:flex-initial min-w-[150px] sm:min-w-[200px] py-3.5 px-6 text-base sm:text-lg font-bold tracking-wider shadow-lg shadow-apostole-gold/25 hover:scale-105"
-              onClick={() => navigate('/fases')}
-            />
+          {/* Botões: (Jogar -- Multiplayer) em cima / (Ranking -- Loja -- Parcerias) embaixo */}
+          <nav className="flex flex-col items-center justify-center gap-2.5 sm:gap-4 max-w-md w-full mt-10">
+            <div className="flex items-center justify-center gap-2.5 sm:gap-4 w-full">
+              {/* 1. Jogar (Maior e com mais destaque) */}
+              <MenuButton
+                icon={<PlayIcon />}
+                label="Jogar"
+                variant="primary"
+                className="flex-1 min-w-[150px] sm:min-w-[200px] py-3.5 px-6 text-base sm:text-lg font-bold tracking-wider shadow-lg shadow-apostole-gold/25 hover:scale-105"
+                onClick={() => navigate('/fases')}
+              />
 
-            {/* 2. Ranking */}
-            <MenuButton
-              icon={<TrophyIcon />}
-              label="Ranking"
-              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
-              onClick={() => navigate('/ranking')}
-            />
+              {/* 2. Multiplayer (em breve) */}
+              <MenuButton
+                icon={<MultiplayerIcon />}
+                label="Multiplayer"
+                disabled
+                badge="Em breve"
+                className="flex-1 py-3.5 px-10 text-xs sm:text-sm justify-center min-w-[250px] sm:min-w-[250px]"
+              />
+            </div>
 
-            {/* 3. Loja */}
-            <MenuButton
-              icon={<ShopIcon />}
-              label="Loja"
-              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px] "
-              onClick={() => navigate('/loja')}
-            />
+            <div className="flex items-center justify-center gap-2.5 sm:gap-4 w-full">
+              {/* 3. Ranking */}
+              <MenuButton
+                icon={<TrophyIcon />}
+                label="Ranking"
+                className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
+                onClick={() => navigate('/ranking')}
+              />
 
-            {/* 4. Parcerias */}
-            <MenuButton
-              icon={<PartnershipIcon />}
-              label="Parcerias"
-              className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
-              onClick={() => navigate('/parcerias')}
-            />
+              {/* 4. Loja */}
+              <MenuButton
+                icon={<ShopIcon />}
+                label="Loja"
+                className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px] "
+                onClick={() => navigate('/loja')}
+              />
+
+              {/* 5. Parcerias */}
+              <MenuButton
+                icon={<PartnershipIcon />}
+                label="Parcerias"
+                className="flex-1 py-3.5 px-6  text-xs sm:text-sm justify-center min-w-[150px] sm:min-w-[200px]"
+                onClick={() => navigate('/parcerias')}
+              />
+            </div>
           </nav>
         </div>
       </div>

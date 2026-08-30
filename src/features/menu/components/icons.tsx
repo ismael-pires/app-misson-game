@@ -69,3 +69,23 @@ export function PartnershipIcon() {
     </svg>
   )
 }
+
+export function MultiplayerIcon() {
+  return (
+    <svg {...props}>
+      <circle cx="9" cy="8" r="3" />
+      <circle cx="17" cy="9" r="2.5" />
+      <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      <path d="M15 14.5c2.5.3 4 2.1 4 5.5" />
+    </svg>
+  )
+}
+
+export function LockIcon() {
+  return (
+    <svg {...props} width={14} height={14}>
+      <rect x="4" y="10" width="16" height="11" rx="2" />
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+    </svg>
+  )
+}
