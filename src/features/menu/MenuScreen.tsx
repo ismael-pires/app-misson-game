@@ -36,7 +36,7 @@ export function MenuScreen() {
                 label="Jogar"
                 variant="primary"
                 className="flex-1 min-w-[150px] sm:min-w-[200px] py-3.5 px-6 text-base sm:text-lg font-bold tracking-wider shadow-lg shadow-apostole-gold/25 hover:scale-105"
-                onClick={() => window.location.href = 'https://bosque-de-luma-poc.maple-kiwi-5973.chatgpt.site/'}
+                onClick={() => window.location.href = 'https://app-gameplay-mission-game.onrender.com'}
               />
 
               {/* 2. Multiplayer (em breve) */}
