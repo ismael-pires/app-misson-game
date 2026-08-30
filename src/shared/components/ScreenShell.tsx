@@ -11,7 +11,7 @@ export function ScreenShell({ title, children }: ScreenShellProps) {
 
   return (
     <div className="min-h-screen w-full bg-apostole-navydeep bg-gradient-to-b from-apostole-navydeep to-apostole-navy px-6 py-10 text-apostole-cream">
-      <div className="mx-auto max-w-6xl items-center justify-center">
+      <div className="mx-auto max-w-5xl items-center justify-center">
         <button
           type="button"
           onClick={() => navigate('/')}

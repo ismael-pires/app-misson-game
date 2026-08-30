@@ -33,6 +33,7 @@ export function ShopScreen() {
 
   return (
     <ScreenShell title="Loja">
+      <div className="px-40"> 
       <CurrencyBar currency={profile.currency} />
 
       {feedback && (
@@ -77,6 +78,7 @@ export function ShopScreen() {
             ))}
           </div>
         </section>
+      </div>
       </div>
     </ScreenShell>
   )
