@@ -69,6 +69,7 @@ export function PodiumPlace({ entry }: PodiumPlaceProps) {
         <div className={`absolute inset-0 rounded-full blur-lg ${style.glow}`} />
         <AvatarBadge
           username={entry.username}
+          avatar={entry.avatar}
           size={style.avatarSize}
           ringClassName={style.ring}
           className="shadow-[0_4px_12px_rgba(0,0,0,0.55)]"

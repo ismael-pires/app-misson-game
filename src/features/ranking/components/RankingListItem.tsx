@@ -1,3 +1,4 @@
+import domIcon from '../../../assets/dom.png'
 import type { RankingEntry } from '../../../shared/types/ranking'
 import { AvatarBadge } from './AvatarBadge'
 
@@ -11,11 +12,11 @@ export function RankingListItem({ entry }: RankingListItemProps) {
       <span className="w-6 text-center font-body text-sm font-semibold text-apostole-cream/60">
         {entry.position}
       </span>
-      <AvatarBadge username={entry.username} size="sm" />
-      {/* <span className="flex-1 font-body text-sm text-apostole-cream">{entry.username}</span> */}
+      <AvatarBadge username={entry.username} avatar={entry.avatar} size="sm" />
+      <span className="flex-1 font-body text-sm text-apostole-cream">{entry.username}</span>
       <div className="flex-shrink-0" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <img
-          src={`/src/assets/dom.png`}
+          src={domIcon}
           alt={"dons"}
           className="h-6 w-6 rounded-full"
         />
