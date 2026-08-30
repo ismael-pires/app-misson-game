@@ -7,4 +7,5 @@ export interface PlayerProfile {
   completedPhaseIds: string[]
   ownedAvatarIds: string[]
   ownedHeroSkinIds: string[]
+  ownedShopItemIds: string[]
 }

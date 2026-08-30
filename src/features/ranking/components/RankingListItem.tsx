@@ -20,7 +20,7 @@ export function RankingListItem({ entry }: RankingListItemProps) {
           alt={"dons"}
           className="h-6 w-6 rounded-full"
         />
-      <span className="font-body text-sm font-semibold text-apostole-gold">{entry.donsCount} XP</span>
+      <span className="font-body text-sm font-semibold text-apostole-gold">{entry.donsCount} dons</span>
       </div>
     </li>
   )

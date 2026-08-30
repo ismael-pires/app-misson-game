@@ -9,4 +9,5 @@ export const mockPlayerProfile: PlayerProfile = {
   completedPhaseIds: ['vale-do-primeiro-chamado'],
   ownedAvatarIds: ['avatar-01', 'avatar-02'],
   ownedHeroSkinIds: ['skin-01'],
+  ownedShopItemIds: ['item-02'],
 }

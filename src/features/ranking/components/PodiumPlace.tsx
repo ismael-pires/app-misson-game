@@ -86,7 +86,7 @@ export function PodiumPlace({ entry }: PodiumPlaceProps) {
       </p>
       <div className="mb-3 mt-0.5 flex items-center gap-1">
         <img src={domIcon} alt="dons" className="h-4 w-4" />
-        <span className={`font-body text-xs font-bold ${style.donsColor}`}>{entry.donsCount} XP</span>
+        <span className={`font-body text-xs font-bold ${style.donsColor}`}>{entry.donsCount} dons</span>
       </div>
 
       <div className={`w-full ${style.height} [perspective:450px]`}>
